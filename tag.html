@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script src="jquery-1.8.0.min.js"></script>
+    <script src="utils.js"></script>
+    <script src="utils2.js"></script>
+<script src="jquery-ui-1.9.0.custom.min.js"></script>
+<script src="jquery-tag3.js"></script>
+    <script src="parseTags.js"></script>
+<style type="text/css">
+.test{
+	min-height: 30px;
+    border: 1px solid #d7d7d7;
+    background-color: white;
+    margin-top: 15px;
+    position: relative;
+    -webkit-transition:border 400ms ease;
+	font-family:Arial, Helvetica, sans-serif;
+	padding-top:5px;
+	width:500px;
+    padding-left: 3px;
+
+}
+.diigo_tag.repeated{
+    -webkit-animation:notice 600ms ease both;
+    -webkit-animation-play-state:running;
+    -webkit-animation-iteration-count:2;
+
+}
+
+@-webkit-keyframes notice{
+    0%{background-image: -webkit-linear-gradient(top,#fff,#f9f9f9);border: 1px solid #d3d3d3;}
+    50%{ border-color: #aac7df;background-image: -webkit-linear-gradient(top,#ecf6fd,#e7f4fd);}
+    100%{background-image: -webkit-linear-gradient(top,#fff,#f9f9f9);border: 1px solid #d3d3d3;}
+}
+
+.diigo_tag span{
+    outline: none;
+    display: inline-block;
+    line-height: 15px;
+    cursor: text;
+    padding: 0px 1px 0px 1px;
+}
+
+.diigo_tag.edit{
+    box-shadow: 0 1px 2px rgba(0,0,0,.1) inset;
+    font-weight: bold;
+}
+.diigo_tag_close{
+    height: 9px;
+    width: 9px;
+    display: inline-block;
+    background-image: url("x.png");
+    margin-left: 5px;
+    line-height: 15px;
+    font-weight: bold;
+    text-indent: 2px;
+    position: absolute;
+    right: -6px;
+    top:-5px;
+    display: none;
+}
+
+.diigo_tag:hover .diigo_tag_close{
+    display: block;
+}
+.diigo_tag_close:hover{
+    color: red;
+}
+
+input{
+	outline:none;
+	border:none;
+    font-size: 12px;
+    margin-left: 0px;
+    width: 300px;
+    padding: 3px;
+    color:#242424;
+}
+.diigo_tag{
+    display: inline-block;
+    height: 15px;
+    padding: 1px 5px;
+    line-height: 15px;
+    background-color: #f2f2f2;
+    border-right: 1px solid #C9D7F1;
+    border-bottom: 1px solid #C9D7F1;
+    color: #575757;
+    border-radius: 1px;
+    cursor:pointer;
+    font-size: 12px;
+    margin-right: 5px;
+    margin-bottom: 2px;
+    position: relative;
+}
+
+.diigo_tag.remove{
+    background-color: #0066cc;
+    color: #fff;
+}
+p{
+    font-family: Arial;
+    font-size: 14px;
+
+}
+</style>
+</head>
+
+<body>
+<p><i>1.Press space to create tag(use quote to create tag with two or more words)</i></p>
+<div id="tag" class="test"></div>
+<!--<div id="tag"><input type="text" placeholder="Input or select tags" style="width: 300px"> </div>-->
+<!--<i style="font-size: 14px;color: #eee">按照以前的输入习惯输入</i>-->
+<br>
+<p><i>2.Press enter to create tag</i></p>
+<div id="tag2" class="test"></div>
+<script>
+$('#tag').diigoTagInput({spaceKey:true,enterKey:false});
+$('#tag2').diigoTagInput({enterKey:true,spaceKey:false});
+
+</script>
+</body>
+</html>
