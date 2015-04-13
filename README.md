@@ -1,4 +1,4 @@
 DiigoTagInputDemo
 =================
 
-diigo tag input demo (space or enter)
+diigo tag input demo (space or enter).
